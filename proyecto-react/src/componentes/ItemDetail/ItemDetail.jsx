@@ -1,45 +1,15 @@
-
-import { useParams } from "react-router-dom"
-import ItemCount from "../ItemCount/ItemCount"
-
-
-
-const ItemDetailContainer =({id, nombre, img, precio, stock , descripcion}) =>{
-    const params = useParams();
-    console.log(params);
-
+const ItemDetail = ({item}) =>{
     return(
-    <article>
-        <header>
-            <h2>
-                
-                {nombre}
-            </h2>
-        </header>
-        <picture>
-            <p>
-                <img src={img} alt={nombre} />
-            </p>
-        </picture>
-        <section>
-            <p>
-                Descripcion:{descripcion}
-            </p>
-            <p>
-                stock:{stock}
-            </p>
-            <p>
-                precio: ${precio}
-            </p>
-           
-        </section>
-        <footer>
-           <ItemCount inicial={1} stock={stock} agregar={cantidad =>console.log("cantida Agregada", cantidad)}/>
-        </footer>
-        
-    </article>
-
+        <div>
+            <img src={item.img} alt={item.nombre}/>
+            <div>
+                <h3>{item.nombre}</h3>
+                <p>{item.descripcion}</p>
+                <p>{item.categoria}</p>
+                <p>{item.precio}</p>
+            </div>
+        </div>
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetail

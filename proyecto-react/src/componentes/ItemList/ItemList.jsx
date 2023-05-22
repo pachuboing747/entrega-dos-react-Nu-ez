@@ -1,9 +1,15 @@
-import ItemDetail from "../ItemDetail/ItemDetail"
+import Item from "../Item/Item"
+// import {CapitalLetter} from "../CapitalLetter/CapitalLetter"
 
-const ItemList = ({lista}) =>{
+const ItemList = ({lista, titulo}) =>{
+    
     return(
         <div>
-            {lista.map( list => <ItemDetail key={list.id}{...list}/>)}
+            {/* <h2>{CapitalLetter(titulo)}</h2> */}
+            <h2>{titulo}</h2>
+            <div>
+            {lista.map((list )=> <Item lista = {list} key={list.id}/>)}
+            </div>
         </div>
     )
 }

@@ -1,25 +1,32 @@
 import { useState, useEffect } from "react"
-import {getLista} from "../Lista/Lista"
 import ItemList from "../ItemList/ItemList"
+import { requestData } from "../Request data/Request data"
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({greeting}) =>{
     const [lista, setLista] = useState([])
+    const categoria = useParams().categoria
+    const [titulo, setTitulo ] = useState("productos")
+   
 
     useEffect(() =>{
-        getLista()
+        requestData()
         .then(respuesta =>{
-            setLista(respuesta)
+            if (categoria){
+                setLista(respuesta.filter((prod) => prod.categoria === categoria));
+                setTitulo(categoria)
+            }else{
+                setLista(respuesta);
+                setTitulo("Productos")
+            }
         })
-        .catch(error =>{
-            console.error(error)
-        })
-    },[])
+    },[categoria])
 
 
     return(
         <div>
             <h2>{greeting}</h2>
-            <ItemList lista={lista}/>
+            <ItemList lista={lista} titulo={titulo}/>
         </div>
     )
 }
