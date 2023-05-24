@@ -1,14 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Item = ({lista}) =>{
     return(
-    <div>
+    <div className="tarjeta">
         <img src={lista.img}/>
-        <div>
+        <div className="text-tarjeta">
             <h4>{lista.nombre}</h4>
             <p>Precio: ${lista.precio}</p>
-            <p>Descripción:{lista.descripcion}</p>
-          <a href={`/item/${lista.id}`}>Ver mas</a>
+            < Link className="btn-mas" to={`/item/${lista.id}`}>Ver mas</Link>
         </div>
     </div>
     )

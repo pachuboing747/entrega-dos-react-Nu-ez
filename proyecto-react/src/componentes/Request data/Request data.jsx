@@ -11,7 +11,7 @@ export const requestData = (id) => {
 export const getProduct = (id) => {
     return new Promise((resolve, reject) =>{
 
-        const item = lista.find( (prod) => prod.id === id)
+        const item = lista.find( (prod) => prod.id == id)
         
         if(item) {
             resolve(item)

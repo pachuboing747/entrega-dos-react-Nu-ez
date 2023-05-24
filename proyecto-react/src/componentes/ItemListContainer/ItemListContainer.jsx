@@ -13,7 +13,7 @@ const ItemListContainer = ({greeting}) =>{
         requestData()
         .then(respuesta =>{
             if (categoria){
-                setLista(respuesta.filter((prod) => prod.categoria === categoria));
+                setLista(respuesta.filter((prod) => prod.categoria == categoria));
                 setTitulo(categoria)
             }else{
                 setLista(respuesta);
@@ -25,7 +25,6 @@ const ItemListContainer = ({greeting}) =>{
 
     return(
         <div>
-            <h2>{greeting}</h2>
             <ItemList lista={lista} titulo={titulo}/>
         </div>
     )

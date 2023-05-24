@@ -4,7 +4,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer =() =>{
-    const [item, setItem] = useState()
+    const [item, setItem] = useState(null)
     const id = useParams().id;
 
     useEffect(()=>{
@@ -17,7 +17,7 @@ const ItemDetailContainer =() =>{
 
 
     return(
-        <div>
+        <div className="container-item-detail-container">
         {item && <ItemDetail item={item}/>}
         </div>
     )

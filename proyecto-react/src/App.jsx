@@ -11,8 +11,6 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar/>
-      <h1 className="titulo">Boca Shop</h1>
-
       <Routes>
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/item/:id' element={<ItemDetailContainer/>}/>

@@ -1,20 +1,20 @@
 import CartWidget from "../CartWidget/CartWidget"
 import { Link } from "react-router-dom"
+import  image from "../Navbar/image/boca.png"
 
 const Navbar = () =>{
     return(
         <nav className="nav-bar">
-            <Link to="/"><h1>logo</h1></Link>
             <ul className="navbar-botones">
-                <li><Link to="/">Inicio</Link></li>
-                <li><Link to="/Productos">Productos</Link></li>
-                <li><Link to="/Productos/Camisetas">Camisetas</Link></li>
-                <li><Link to="/Productos/Shorts">Shorts</Link></li>
-                <li><Link to="/Productos/Remeras">Remeras</Link></li>
-                <li><Link to="/Productos/Pantalones">Pantalones</Link></li>
-                <li><Link to="/Productos/Buzos">Buzos</Link></li>
-                <li><Link to="/Productos/Camperas">Camperas</Link></li>
-                <li><Link to="/Productos/Medias">Medias</Link></li>
+                <Link className="shield" to="/"><img className="img-shield"  src={image} alt="boca"/></Link>
+                <li className="navbar-lista"><Link to="/">Inicio</Link></li>
+                <li className="navbar-lista"><Link to="/productos/Camisetas/">Camisetas</Link></li>
+                <li className="navbar-lista"><Link to="/productos/Shorts">Shorts</Link></li>
+                <li className="navbar-lista"><Link to="/productos/Remeras">Remeras</Link></li>
+                <li className="navbar-lista"><Link to="/productos/Pantalones">Pantalones</Link></li>
+                <li className="navbar-lista"><Link to="/productos/Buzos">Buzos</Link></li>
+                <li className="navbar-lista"><Link to="/productos/Camperas">Camperas</Link></li>
+                <li className="navbar-lista"><Link to="/productos/Medias">Medias</Link></li>
                 <CartWidget/>
                
             </ul>
